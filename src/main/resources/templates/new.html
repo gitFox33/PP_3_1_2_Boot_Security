@@ -16,7 +16,7 @@
     <br/>
     <br>
     <label for="email">Enter email: </label>
-    <input type="text" th:field="*{email}" id="email" required/>
+    <input type="email" th:field="*{email}" id="email" required/>
     <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
     <br/>
     <br>

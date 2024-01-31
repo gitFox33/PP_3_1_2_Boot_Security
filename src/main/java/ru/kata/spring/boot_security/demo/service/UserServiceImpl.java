@@ -26,12 +26,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
 
     /**
-    *   Метод loadUserByUsername является частью Spring Security и используется для
-    *   загрузки информации о пользователе по его имени пользователя. Он получает пользователя
-    *   из базы данных по его имени пользователя, проверяет его существование, и затем
-    *   создает объект UserDetails для этого пользователя, учитывая различные параметры,
-    *   такие как активность учетной записи и сроки действия учетных данных.
-    * */
+     *   Метод loadUserByUsername является частью Spring Security и используется для
+     *   загрузки информации о пользователе по его имени пользователя. Он получает пользователя
+     *   из базы данных по его имени пользователя, проверяет его существование, и затем
+     *   создает объект UserDetails для этого пользователя, учитывая различные параметры,
+     *   такие как активность учетной записи и сроки действия учетных данных.
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userDao.getUserByUsername(username);
@@ -49,11 +49,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     /**
-    *   Метод getAuthorities принимает набор ролей пользователя и преобразует их в
-    *   набор разрешений (GrantedAuthority). Он проходит по каждой роли пользователя и
-    *   создает объект SimpleGrantedAuthority для каждой роли, используя имя роли в
-    *   качестве имени разрешения. Метод возвращает набор разрешений.
-    * */
+     *   Метод getAuthorities принимает набор ролей пользователя и преобразует их в
+     *   набор разрешений (GrantedAuthority). Он проходит по каждой роли пользователя и
+     *   создает объект SimpleGrantedAuthority для каждой роли, используя имя роли в
+     *   качестве имени разрешения. Метод возвращает набор разрешений.
+     */
 
     private static Set<GrantedAuthority> getAuthorities (Set<Role> roles) {
         Set<GrantedAuthority> authorities = new HashSet<>();

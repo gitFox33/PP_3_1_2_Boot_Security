@@ -39,7 +39,10 @@ public class User implements UserDetails {
     @Size(min = 1, max = 60, message = " Password should be between 1 and 60 characters")
     @NotBlank(message = " Name should not be empty")
     private String password;
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @JoinTable(name = "users_roles",
+            joinColumns = @JoinColumn(name = "users_id"),
+            inverseJoinColumns = @JoinColumn(name = "roles_id"))
     private Set<Role> roles = new HashSet<>();
 
     public User() {

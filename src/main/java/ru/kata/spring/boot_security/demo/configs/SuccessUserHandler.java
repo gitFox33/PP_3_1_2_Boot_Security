@@ -21,9 +21,9 @@ public class SuccessUserHandler implements AuthenticationSuccessHandler {
         this.userService = userService;
     }
     /**
-    * Метод onAuthenticationSuccess выполняет перенаправление пользователя на разные URL
-    * в зависимости от их роли после успешной аутентификации.
-    * */
+     * Метод onAuthenticationSuccess выполняет перенаправление пользователя на разные URL
+     * в зависимости от их роли после успешной аутентификации.
+     */
     @Override
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException {
         Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
@@ -38,8 +38,8 @@ public class SuccessUserHandler implements AuthenticationSuccessHandler {
     }
 
     /**
-    * Метод userId извлекает идентификатор пользователя из объекта Authentication с использованием сервиса userService.
-    * */
+     * Метод userId извлекает идентификатор пользователя из объекта Authentication с использованием сервиса userService.
+     */
     public String userId(Authentication authentication) {
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         return String.valueOf(userService.getUserByUsername(userDetails.getUsername()).getId());
