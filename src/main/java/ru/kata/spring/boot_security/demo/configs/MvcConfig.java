@@ -8,9 +8,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class MvcConfig implements WebMvcConfigurer {
 
     /**
-      * Метод добавляет отображение для URL  /,
-      * который будет отображать представление с именем "index"
-      */
+     * Метод добавляет отображение для URL  /,
+     * который будет отображать представление с именем "index"
+     */
 
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");

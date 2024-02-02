@@ -13,11 +13,11 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import ru.kata.spring.boot_security.demo.service.UserServiceImpl;
 /**
- * Этот класс WebSecurityConfig является конфигурационным классом для настройки
- * безопасности веб-приложения с использованием Spring Security. Он расширяет класс
- * WebSecurityConfigurerAdapter и использует аннотацию @EnableWebSecurity для включения
- * поддержки безопасности веб-приложения.
- */
+* Этот класс WebSecurityConfig является конфигурационным классом для настройки
+* безопасности веб-приложения с использованием Spring Security. Он расширяет класс
+* WebSecurityConfigurerAdapter и использует аннотацию @EnableWebSecurity для включения
+* поддержки безопасности веб-приложения.
+*/
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
